@@ -1,0 +1,10 @@
+.App {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.App header {
+  margin: 24px 0;
+  font-size: 1.333rem;
+}
