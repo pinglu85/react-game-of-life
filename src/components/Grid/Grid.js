@@ -11,7 +11,7 @@ const Grid = ({ grid }) => {
         return (
           <div key={index} className={styles.Column}>
             {col.map((row, i) => (
-              <Box key={i} isLive={row} />
+              <Box key={i} isAlive={row} />
             ))}
           </div>
         );
