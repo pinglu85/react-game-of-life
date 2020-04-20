@@ -3,10 +3,7 @@ import React from 'react';
 import styles from './Grid.module.css';
 import Box from './Box/Box';
 
-const Grid = () => {
-  const grid = Array(10)
-    .fill(null)
-    .map((col) => (col = Array(5).fill(null)));
+const Grid = ({ grid }) => {
   console.log(grid);
   return (
     <div className={styles.Grid}>
@@ -14,7 +11,7 @@ const Grid = () => {
         return (
           <div key={index} className={styles.Column}>
             {col.map((row, i) => (
-              <Box key={i} />
+              <Box key={i} isLive={row} />
             ))}
           </div>
         );

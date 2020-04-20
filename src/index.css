@@ -2,9 +2,9 @@
 
 :root {
   --black: #1a1919;
-  --white: #fdfdfd;
-  --white-dark: #f5f4f4;
-  --grey: rgb(124, 123, 123);
+  --white: #f3f1f1;
+  --white-b: #e9e9e9;
+  --grey: rgb(49, 49, 49);
   --red: #f10606;
 }
 
@@ -16,4 +16,8 @@
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--black);
 }

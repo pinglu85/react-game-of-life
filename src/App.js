@@ -7,7 +7,7 @@ function App() {
   return (
     <div className={styles.App}>
       <header>
-        <h1>The Game of Life</h1>
+        <h1>Conway's Game of Life</h1>
       </header>
       <main>
         <Game />

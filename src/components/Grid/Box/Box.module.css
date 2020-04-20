@@ -1,7 +1,11 @@
 @import '../../../index.css';
 
 .Box {
-  width: 100px;
-  height: 100px;
+  width: 15px;
+  height: 15px;
   border: 1px solid var(--grey);
+}
+
+.live {
+  background-color: var(--white-b);
 }

@@ -1,0 +1,42 @@
+function gilderGun(grid, cols) {
+  const startCol = Math.floor((cols - 36) / 2);
+  grid[startCol][11] = 1;
+  grid[startCol][12] = 1;
+  grid[startCol + 1][11] = 1;
+  grid[startCol + 1][12] = 1;
+  grid[startCol + 10][11] = 1;
+  grid[startCol + 10][12] = 1;
+  grid[startCol + 10][13] = 1;
+  grid[startCol + 11][10] = 1;
+  grid[startCol + 11][14] = 1;
+  grid[startCol + 12][9] = 1;
+  grid[startCol + 12][15] = 1;
+  grid[startCol + 13][9] = 1;
+  grid[startCol + 13][15] = 1;
+  grid[startCol + 14][12] = 1;
+  grid[startCol + 15][10] = 1;
+  grid[startCol + 15][14] = 1;
+  grid[startCol + 16][11] = 1;
+  grid[startCol + 16][12] = 1;
+  grid[startCol + 16][13] = 1;
+  grid[startCol + 17][12] = 1;
+  grid[startCol + 20][9] = 1;
+  grid[startCol + 20][10] = 1;
+  grid[startCol + 20][11] = 1;
+  grid[startCol + 21][9] = 1;
+  grid[startCol + 21][10] = 1;
+  grid[startCol + 21][11] = 1;
+  grid[startCol + 22][8] = 1;
+  grid[startCol + 22][12] = 1;
+  grid[startCol + 24][7] = 1;
+  grid[startCol + 24][8] = 1;
+  grid[startCol + 24][12] = 1;
+  grid[startCol + 24][13] = 1;
+  grid[startCol + 34][9] = 1;
+  grid[startCol + 34][10] = 1;
+  grid[startCol + 35][9] = 1;
+  grid[startCol + 35][10] = 1;
+  return grid;
+}
+
+export default gilderGun;

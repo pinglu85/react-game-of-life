@@ -1,10 +1,13 @@
+@import './index.css';
+
 .App {
-  width: 1000px;
+  width: 900px;
   margin: 0 auto;
   text-align: center;
 }
 
 .App header {
-  margin: 24px 0;
+  margin: 48px 0;
   font-size: 1.333rem;
+  color: var(--white);
 }
