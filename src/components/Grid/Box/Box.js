@@ -2,9 +2,11 @@ import React from 'react';
 
 import styles from './Box.module.css';
 
-const Box = ({ isLive }) => {
+const Box = ({ isAlive }) => {
   return (
-    <div className={[styles.Box, isLive ? styles.live : null].join(' ')}></div>
+    <div
+      className={[styles.Box, isAlive ? styles.alive : null].join(' ')}
+    ></div>
   );
 };
 
