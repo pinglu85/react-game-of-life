@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import applyRules from '../../utils/applyRules';
-import gilderGun from '../../presetPatterns/gilderGun';
+import gliderGun from '../../presetPatterns/gliderGun';
 import Grid from '../../components/Grid/Grid';
+import Button from '../../components/UI/Button/Button';
 import styles from './Game.module.css';
 
 const gridArray = Array(60)
@@ -14,7 +15,7 @@ const Game = () => {
   const [play, setPlay] = useState(false);
 
   useEffect(() => {
-    const gilderGunGrid = gilderGun([...grid], 60);
+    const gilderGunGrid = gliderGun([...grid], 60);
     setGrid(gilderGunGrid);
   }, []);
 
@@ -41,12 +42,14 @@ const Game = () => {
 
   return (
     <div>
+      <div>
+        <Button clicked={handleStart}>start</Button>
+        <Button clicked={handleStop}>stop</Button>
+      </div>
       <Grid grid={grid} />
       <div className={styles.Generation}>
         <p>generation: {count}</p>
       </div>
-      <button onClick={handleStart}>start</button>
-      <button onClick={handleStop}>stop</button>
     </div>
   );
 };

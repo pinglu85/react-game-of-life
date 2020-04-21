@@ -1,4 +1,4 @@
-function gilderGun(grid, cols) {
+function gliderGun(grid, cols) {
   const startCol = Math.floor((cols - 36) / 2);
   grid[startCol][11] = 1;
   grid[startCol][12] = 1;
@@ -39,4 +39,4 @@ function gilderGun(grid, cols) {
   return grid;
 }
 
-export default gilderGun;
+export default gliderGun;
