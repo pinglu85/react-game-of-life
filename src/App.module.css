@@ -7,7 +7,10 @@
 }
 
 .App header {
-  margin: 2.6667rem 0;
-  font-size: 1.333rem;
+  padding: 3rem 0;
+}
+
+.App header h1 {
+  font-size: 1.5rem;
   color: var(--white);
 }
