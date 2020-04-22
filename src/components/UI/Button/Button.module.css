@@ -1,4 +1,10 @@
 .Btn {
-  padding: 0.875rem;
+  padding: 0.5rem;
   font-size: 1rem;
+  border: 0;
+  border-radius: 0.25rem;
+}
+
+.Btn img {
+  width: 1.5rem;
 }
