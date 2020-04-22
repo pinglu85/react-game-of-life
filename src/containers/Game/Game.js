@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import applyRules from '../../utils/applyRules';
 import gliderGun from '../../presetPatterns/gliderGun';
 import Grid from '../../components/Grid/Grid';
-import Button from '../../components/UI/Button/Button';
+import GameInterface from '../../components/UI/GameInterface';
 import styles from './Game.module.css';
 
 const gridArray = Array(60)
@@ -12,7 +12,7 @@ const gridArray = Array(60)
 const Game = () => {
   const [grid, setGrid] = useState(gridArray);
   const [count, setCount] = useState(0);
-  const [play, setPlay] = useState(false);
+  const [isPlay, setIsPlay] = useState(false);
 
   useEffect(() => {
     const gilderGunGrid = gliderGun([...grid], 60);
@@ -20,32 +20,29 @@ const Game = () => {
   }, []);
 
   useEffect(() => {
-    const timer = play
+    const timer = isPlay
       ? setInterval(() => {
           setCount((count) => count + 1);
           setGrid((grid) => applyRules(grid));
         }, 350)
       : null;
-    if (!play) {
+    if (!isPlay) {
       clearInterval(timer);
     }
     return () => clearInterval(timer);
-  }, [play]);
+  }, [isPlay]);
 
   const handleStart = () => {
-    setPlay(true);
+    setIsPlay(true);
   };
 
-  const handleStop = () => {
-    setPlay(false);
+  const handlePause = () => {
+    setIsPlay(false);
   };
 
   return (
     <div>
-      <div>
-        <Button clicked={handleStart}>start</Button>
-        <Button clicked={handleStop}>stop</Button>
-      </div>
+      <GameInterface start={handleStart} pause={handlePause} isPlay={isPlay} />
       <Grid grid={grid} />
       <div className={styles.Generation}>
         <p>generation: {count}</p>

@@ -1,7 +1,7 @@
 @import '../../index.css';
 
 .Generation {
-  margin: 1.5rem auto;
+  margin: 2rem auto;
   font-size: 1.25rem;
   color: var(--white);
 }
