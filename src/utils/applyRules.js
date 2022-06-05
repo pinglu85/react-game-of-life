@@ -1,48 +1,38 @@
 function applyRules(grid) {
-  return grid.map((col, colIndex) =>
-    col.map((row, rowIndex) => {
-      // 1, 2, 3
-      // 4, x, 5
-      // 6, 7, 8
-      const nbrOne =
-        colIndex - 1 >= 0 && rowIndex - 1 >= 0
-          ? grid[colIndex - 1][rowIndex - 1]
-          : 0;
-      const nbrTwo = rowIndex - 1 >= 0 ? col[rowIndex - 1] : 0;
-      const nbrThree =
-        colIndex + 1 < grid.length && rowIndex - 1 >= 0
-          ? grid[colIndex + 1][rowIndex - 1]
-          : 0;
-      const nbrFour = colIndex - 1 >= 0 ? grid[colIndex - 1][rowIndex] : 0;
-      const nbrFive =
-        colIndex + 1 < grid.length ? grid[colIndex + 1][rowIndex] : 0;
-      const nbrSix =
-        colIndex - 1 >= 0 && rowIndex + 1 < col.length
-          ? grid[colIndex - 1][rowIndex + 1]
-          : 0;
-      const nbrSeven = rowIndex + 1 < col.length ? col[rowIndex + 1] : 0;
-      const nbrEight =
-        colIndex + 1 < grid.length && rowIndex + 1 < col.length
-          ? grid[colIndex + 1][rowIndex + 1]
-          : 0;
-      const nbrSum =
-        nbrOne +
-        nbrTwo +
-        nbrThree +
-        nbrFour +
-        nbrFive +
-        nbrSix +
-        nbrSeven +
-        nbrEight;
-      if (row === 1 && (nbrSum === 2 || nbrSum === 3)) {
+  return grid.map((row, rowIdx) => {
+    return row.map((col, colIdx) => {
+      // nw, n, ne
+      // w,  x,  e
+      // sw, s, se
+      const nw = getColValue(grid, rowIdx - 1, colIdx - 1);
+      const n = getColValue(grid, rowIdx - 1, colIdx);
+      const ne = getColValue(grid, rowIdx - 1, colIdx + 1);
+      const w = row[colIdx - 1] ?? 0;
+      const e = row[colIdx + 1] ?? 0;
+      const sw = getColValue(grid, rowIdx + 1, colIdx - 1);
+      const s = getColValue(grid, rowIdx + 1, colIdx);
+      const se = getColValue(grid, rowIdx + 1, colIdx + 1);
+      const neighborsSum = nw + n + ne + w + e + sw + s + se;
+
+      if (col === 1 && (neighborsSum === 2 || neighborsSum === 3)) {
         return 1;
-      } else if (row === 0 && nbrSum === 3) {
-        return 1;
-      } else {
-        return 0;
       }
-    })
-  );
+
+      if (col === 0 && neighborsSum === 3) {
+        return 1;
+      }
+
+      return 0;
+    });
+  });
+}
+
+function getColValue(grid, rowIdx, colIdx) {
+  if (rowIdx < 0 || rowIdx >= grid.length) return 0;
+
+  if (colIdx < 0 || colIdx >= grid[0].length) return 0;
+
+  return grid[rowIdx][colIdx];
 }
 
 export default applyRules;

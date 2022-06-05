@@ -1,5 +1,4 @@
-import React from 'react';
-import styles from './Button.module.css';
+import styles from './styles.module.css';
 
 const Button = ({ clicked, children }) => {
   return (

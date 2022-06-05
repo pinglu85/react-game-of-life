@@ -1,17 +1,11 @@
-import React from 'react';
-
+import Game from './containers/Game';
 import styles from './App.module.css';
-import Game from './containers/Game/Game';
 
 function App() {
   return (
     <div className={styles.App}>
-      <header>
-        <h1>Conway's Game of Life</h1>
-      </header>
-      <main>
-        <Game />
-      </main>
+      <h1 className={styles.title}>Conway's Game of Life</h1>
+      <Game />
     </div>
   );
 }

@@ -1,14 +1,13 @@
-import React from 'react';
-import Button from './Button/Button';
+import Button from './Button';
 import iconPlay from '../../assets/icons/play.svg';
 import iconPause from '../../assets/icons/pause.svg';
 import iconNext from '../../assets/icons/next.svg';
 import iconPrev from '../../assets/icons/prev.svg';
-import styles from './GameInterface.module.css';
+import styles from './styles.module.css';
 
-const GameInterface = ({ start, pause, isPlay }) => {
+const GameControl = ({ start, pause, isPlay }) => {
   return (
-    <div className={styles.Interface}>
+    <div className={styles.GameControl}>
       <Button>
         <img src={iconPrev} alt="Prev" />
       </Button>
@@ -28,4 +27,4 @@ const GameInterface = ({ start, pause, isPlay }) => {
   );
 };
 
-export default GameInterface;
+export default GameControl;

@@ -1,21 +1,13 @@
-import React from 'react';
-
-import styles from './Grid.module.css';
-import Box from './Box/Box';
+import Box from './Box';
+import styles from './styles.module.css';
 
 const Grid = ({ grid }) => {
   console.log(grid);
   return (
     <div className={styles.Grid}>
-      {grid.map((col, index) => {
-        return (
-          <div key={index} className={styles.Column}>
-            {col.map((row, i) => (
-              <Box key={i} isAlive={row} />
-            ))}
-          </div>
-        );
-      })}
+      {grid.map((row, rowIdx) =>
+        row.map((col, colIdx) => <Box key={colIdx} isAlive={col} />)
+      )}
     </div>
   );
 };

@@ -1,23 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+
 import applyRules from '../../utils/applyRules';
 import gliderGun from '../../presetPatterns/gliderGun';
-import Grid from '../../components/Grid/Grid';
-import GameInterface from '../../components/UI/GameInterface';
-import styles from './Game.module.css';
+import Grid from '../../components/Grid';
+import GameControl from '../../components/GameControl';
+import styles from './styles.module.css';
 
-const gridArray = Array(60)
-  .fill(null)
-  .map(() => Array(32).fill(0));
+const initialGrid = Array.from({ length: 32 }, () => new Array(60).fill(0));
+gliderGun(initialGrid);
 
 const Game = () => {
-  const [grid, setGrid] = useState(gridArray);
+  const [grid, setGrid] = useState(initialGrid);
   const [count, setCount] = useState(0);
   const [isPlay, setIsPlay] = useState(false);
-
-  useEffect(() => {
-    const gilderGunGrid = gliderGun([...grid], 60);
-    setGrid(gilderGunGrid);
-  }, []);
 
   useEffect(() => {
     const timer = isPlay
@@ -42,7 +37,7 @@ const Game = () => {
 
   return (
     <div>
-      <GameInterface start={handleStart} pause={handlePause} isPlay={isPlay} />
+      <GameControl start={handleStart} pause={handlePause} isPlay={isPlay} />
       <Grid grid={grid} />
       <div className={styles.Generation}>
         <p>generation: {count}</p>
