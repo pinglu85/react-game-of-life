@@ -1,8 +1,8 @@
 import Button from './Button';
-import iconPlay from '../../assets/icons/play.svg';
-import iconPause from '../../assets/icons/pause.svg';
-import iconNext from '../../assets/icons/next.svg';
-import iconPrev from '../../assets/icons/prev.svg';
+import iconPlay from '../assets/icons/play.svg';
+import iconPause from '../assets/icons/pause.svg';
+import iconNext from '../assets/icons/next.svg';
+import iconPrev from '../assets/icons/prev.svg';
 import styles from './styles.module.css';
 
 const GameControl = ({ start, pause, isPlay }) => {

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
-import applyRules from '../../utils/applyRules';
-import gliderGun from '../../presetPatterns/gliderGun';
-import Grid from '../../components/Grid';
-import GameControl from '../../components/GameControl';
+import applyRules from './applyRules';
+import gliderGun from './presetPatterns/gliderGun';
+import Grid from '../Grid';
+import GameControl from '../GameControl';
 import styles from './styles.module.css';
 
 const initialGrid = Array.from({ length: 32 }, () => new Array(60).fill(0));
